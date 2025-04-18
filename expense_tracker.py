@@ -16,14 +16,14 @@ def add_expense(date, amount, category , description):
         "Description":[description]
     }
 
-    df = pd.DataFrame(data) #converts the dictionary into pandas dataframe
+    df = pd.DataFrame(data) 
 
 
     #check if the file exists
     
     if os.path.exists(File_name) and os.path.getsize(File_name)>0:
         #append the new data to the file without overwriting
-        df.to_csv(File_name,  index=False, mode = 'a', header= False)   #saves the dataframe to csv file 
+        df.to_csv(File_name,  index=False, mode = 'a', header= False)   
     else:
         df.to_csv(File_name, index=False)  #create a new csv file with column headers(date,amount,etc)
 
